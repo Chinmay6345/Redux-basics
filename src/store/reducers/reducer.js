@@ -1,4 +1,4 @@
-import { bindActionCreators } from "redux";
+import * as actiontypes from '../constants/constants';
 
 const initialState = {
     counter: 0
@@ -6,22 +6,22 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
     switch(action.type) {
-        case 'INCREMENT':
+        case actiontypes.INCREMENT:
             return {
                 ...state,
                 counter: state.counter+1
             };
-        case 'DECREMENT':
+        case actiontypes.DECREMENT:
             return {
                 ...state,
                 counter: state.counter-1
             };
-        case 'ADD5':
+        case actiontypes.ADD5:
             return {
                 ...state,
                 counter: state.counter + action.payload.value
             };
-        case 'SUBTRACT5':
+        case actiontypes.SUBTRACT5:
             return {
                 ...state,
                 counter: state.counter-action.payload.value
