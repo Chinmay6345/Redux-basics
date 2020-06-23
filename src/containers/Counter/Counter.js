@@ -20,8 +20,8 @@ class Counter extends Component
             <ul>
                 {
                     this.props.StoredResults.map(g=>(
-                    <li key={g.id} onClick={this.props.onDeleteResult}>{ g.value}</li>
-                    ))};               
+                    <li key={g.id} onClick={()=>this.props.onDeleteResult(g.id)}>{ g.value}</li>
+                    ))}               
             </ul>            
         </React.Fragment>        
         )
@@ -41,7 +41,7 @@ const mapDispatchToProps = dispatch => {
         onAdditionof5:()=>dispatch({type:actiontypes.ADD5,payload: {value:5} }),
         onSubtractionof5:()=>dispatch({type:actiontypes.SUBTRACT5,payload: {value:5} }),
         onStoreResult:()=>dispatch({type:actiontypes.STORE_RESULT}),
-        onDeleteResult:()=>dispatch({type:actiontypes.DELETERESULT})
+        onDeleteResult:(id)=>dispatch({type:actiontypes.DELETERESULT,id})
     };
 };
 export default connect(mapStateToProps,mapDispatchToProps)(Counter);
