@@ -1,7 +1,8 @@
 import * as actiontypes from '../constants/constants';
 
 const initialState = {
-    counter: 0
+    counter: 0,
+    results :new Array()
 }
 
 const reducer = (state = initialState, action) => {
@@ -22,6 +23,16 @@ const reducer = (state = initialState, action) => {
                 counter: state.counter + action.payload.value
             };
         case actiontypes.SUBTRACT5:
+            return {
+                ...state,
+                counter: state.counter-action.payload.value
+            };
+        case actiontypes.STORE_RESULT:
+            return {
+                 ...state,
+                 results: state.results.concat({id: new Date(), value: state.counter})
+            };
+        case actiontypes.DELETERESULT:
             return {
                 ...state,
                 counter: state.counter-action.payload.value
