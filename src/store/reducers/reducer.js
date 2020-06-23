@@ -1,12 +1,31 @@
+import { bindActionCreators } from "redux";
+
 const initialState = {
     counter: 0
 }
 
 const reducer = (state = initialState, action) => {
-    if (action.type === 'INCREMENT') {
-        return {
-            counter: state.counter + 1
-        }
+    switch(action.type) {
+        case 'INCREMENT':
+            return {
+                ...state,
+                counter: state.counter+1
+            };
+        case 'DECREMENT':
+            return {
+                ...state,
+                counter: state.counter-1
+            };
+        case 'ADD5':
+            return {
+                ...state,
+                counter: state.counter+5
+            };
+        case 'SUBTRACT5':
+            return {
+                ...state,
+                counter: state.counter-5
+            };
     }
     return state;
 };
