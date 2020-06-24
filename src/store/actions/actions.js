@@ -17,3 +17,21 @@ export const add5=(value)=>{
         value:value
     }
 }
+export const subtract5=(value)=>{
+    return {
+        type: actions.SUBTRACT5,
+        value:value
+    }
+}
+export const storeResult=(result)=>{
+    return {
+        type: actions.STORE_RESULT,
+        result:result
+    };
+}
+export const deleteResult=(id)=>{
+    return {
+        type: actions.DELETERESULT,
+        id:id
+    }
+}

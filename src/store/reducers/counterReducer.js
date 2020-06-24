@@ -24,7 +24,7 @@ const reducer = (state = initialState, action) => {
         case actiontypes.SUBTRACT5:
             return {
                 ...state,
-                counter: state.counter-action.payload.value
+                counter: state.counter-action.value
             };
     }
     return state;

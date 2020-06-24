@@ -38,8 +38,10 @@ const mapDispatchToProps = dispatch => {
     return {
         onIncrementCounter: () => dispatch(actions.increment()),
         onDecrementCounter:()=>dispatch(actions.decrement()),
-        onAdditionof5:()=>dispatch(actions.add5(5))
-       
+        onAdditionof5:()=>dispatch(actions.add5(5)),
+        onSubtractionof5:()=>dispatch(actions.subtract5(5)),
+        onStoreResult:(result)=>dispatch(actions.storeResult(result)),
+        onDeleteResult:(id)=>dispatch(actions.deleteResult(id))
     };
 };
 export default connect(mapStateToProps,mapDispatchToProps)(Counter);
