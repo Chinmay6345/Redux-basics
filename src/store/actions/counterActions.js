@@ -1,6 +1,5 @@
 import * as actions from '../constants/constants';
 
-
 export const increment=()=>{
     return {
         type:actions.INCREMENT
@@ -21,17 +20,5 @@ export const subtract5=(value)=>{
     return {
         type: actions.SUBTRACT5,
         value:value
-    }
-}
-export const storeResult=(result)=>{
-    return {
-        type: actions.STORE_RESULT,
-        result:result
-    };
-}
-export const deleteResult=(id)=>{
-    return {
-        type: actions.DELETERESULT,
-        id:id
     }
 }

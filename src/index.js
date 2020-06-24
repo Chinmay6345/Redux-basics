@@ -25,7 +25,7 @@ const logger=(store)=>{
     }
 }
 
-const store = createStore(rootReducer,applyMiddleware(logger));
+const store = createStore(rootReducer,applyMiddleware(logger,thunk));
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
 registerServiceWorker();

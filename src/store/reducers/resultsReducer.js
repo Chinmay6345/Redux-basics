@@ -9,7 +9,7 @@ const reducer = (state = initialState, action) => {
         case actiontypes.STORE_RESULT:
             return {
                  ...state,
-                 results: state.results.concat({id: new Date(), value: action.result})
+                 results: state.results.concat({id: Math.random() * (352364643 - 45) + 3, value: action.result})
             };
         case actiontypes.DELETERESULT:
             const updatedArr= state.results.filter(result=>result.id !==action.id);
