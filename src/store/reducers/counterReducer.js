@@ -19,7 +19,7 @@ const reducer = (state = initialState, action) => {
         case actiontypes.ADD5:
             return {
                 ...state,
-                counter: state.counter + action.payload.value
+                counter: state.counter + action.value
             };
         case actiontypes.SUBTRACT5:
             return {

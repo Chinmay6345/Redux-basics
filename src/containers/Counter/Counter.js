@@ -38,10 +38,8 @@ const mapDispatchToProps = dispatch => {
     return {
         onIncrementCounter: () => dispatch(actions.increment()),
         onDecrementCounter:()=>dispatch(actions.decrement()),
-        onAdditionof5:()=>dispatch({type:actiontypes.ADD5,payload: {value:5} }),
-        onSubtractionof5:()=>dispatch({type:actiontypes.SUBTRACT5,payload: {value:5} }),
-        onStoreResult:(result)=>dispatch({type:actiontypes.STORE_RESULT,result:result}),
-        onDeleteResult:(id)=>dispatch({type:actiontypes.DELETERESULT,id})
+        onAdditionof5:()=>dispatch(actions.add5(5))
+       
     };
 };
 export default connect(mapStateToProps,mapDispatchToProps)(Counter);

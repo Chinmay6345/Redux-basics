@@ -11,3 +11,9 @@ export const decrement=()=>{
         type:actions.DECREMENT
     }
 }
+export const add5=(value)=>{
+    return {
+        type: actions.ADD5,
+        value:value
+    }
+}
