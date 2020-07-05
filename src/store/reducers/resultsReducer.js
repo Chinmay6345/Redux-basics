@@ -1,11 +1,25 @@
 import * as actiontypes from '../constants/constants';
-
+import { updateObject } from '../HelperMethods/Utility';
 const initialState = {
     results :new Array()
 }
 
 const reducer = (state = initialState, action) => {
     switch(action.type) {      
+        case actiontypes.STORE_RESULT:
+            return updateObject(state,{results: state.results.concat({id: Math.random() * (352364643 - 45) + 3, value: action.result})});
+        case actiontypes.DELETERESULT:
+            const updatedArr= state.results.filter(result=>result.id !==action.id);
+            return updateObject(state,{results: updatedArr});
+    }
+    return state;
+};
+
+export default reducer;
+
+
+/*
+ switch(action.type) {      
         case actiontypes.STORE_RESULT:
             return {
                  ...state,
@@ -20,5 +34,4 @@ const reducer = (state = initialState, action) => {
     }
     return state;
 };
-
-export default reducer;
+ */
