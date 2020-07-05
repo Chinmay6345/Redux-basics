@@ -9,7 +9,7 @@ const reducer = (state = initialState, action) => {
         case actiontypes.INCREMENT:
             return {
                 ...state,
-                counter: state.counter+1
+                counter: state.counter+1 
             };
         case actiontypes.DECREMENT:
             return {
